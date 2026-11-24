@@ -1,0 +1,27 @@
+<!doctype html><meta charset="utf-8"><style>
+body{margin:0;padding:0;font-family:"Microsoft YaHei",sans-serif;background:#f4f7fb;width:1120px}
+h1{font-size:26px;margin:0 0 4px;color:#12263f}
+.sub{color:#5b6b82;font-size:14px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;box-shadow:0 1px 3px rgba(16,24,40,.06)}
+.ttl{font-size:14px;font-weight:700;color:#12263f;margin-bottom:10px}
+.ttl span{font-weight:400;color:#8496ad;font-size:12px;margin-left:8px}
+table{border-collapse:collapse;width:100%;font-size:11.5px}
+th{background:#eef4ff;color:#2c4a7c;text-align:left;padding:6px 7px;border:1px solid #dfe8f6;white-space:nowrap}
+td{padding:5px 7px;border:1px solid #eef1f6;color:#33455c;white-space:nowrap}
+.bad td{background:#fff6f5}
+.ok td{background:#f5fbf6}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:30px;color:#2563eb}
+.foot{margin-top:16px;font-size:12.5px;color:#5b6b82;display:flex;gap:22px}
+.foot b{color:#0f7b3e}
+</style>
+<div id="wrap" style="padding:30px 34px;"><h1>Excel 多表合并 · 自动清洗去重 · 一键汇总</h1>
+<div class="sub">客户发来 N 个格式不一的表 → 3 分钟出规范明细 + 汇总 + 异常清单（样例为脚本真实运行结果）</div>
+<div class="grid">
+<div><div class="card bad"><div class="ttl">处理前 #1：订单_华东.xlsx</div><table><thead><tr><th>订单号</th><th>下单日期</th><th>客户</th><th>城市</th><th>商品</th><th>数量</th><th>单价</th><th>渠道</th></tr></thead><tbody><tr><td>NO1000</td><td>2026/10/08</td><td>客户52</td><td> 杭州 </td><td>显示器支架</td><td>3 </td><td>89.9</td><td>天猫</td></tr><tr><td>NO1001</td><td>2026/10/19</td><td>客户42</td><td>广州</td><td>无线鼠标</td><td>5</td><td>￥1,299</td><td>天猫</td></tr><tr><td>NO1002</td><td>2026/10/19</td><td>客户25</td><td>广州</td><td>降噪耳机</td><td>1</td><td>89.9</td><td>天猫</td></tr><tr><td>NO1003</td><td>2026/10/18</td><td>客户52</td><td>上海</td><td>降噪耳机</td><td>3</td><td>1299</td><td>天猫</td></tr><tr><td>NO1004</td><td>2026/10/14</td><td>客户02</td><td>深圳</td><td>机械键盘</td><td>1</td><td>199</td><td>私域</td></tr></tbody></table></div><div class="card bad"><div class="ttl">处理前 #2：订单_华南.xlsx</div><table><thead><tr><th>订单号</th><th>下单日期</th><th>客户</th><th>城市</th><th>商品</th><th>数量</th><th>单价</th><th>渠道</th></tr></thead><tbody><tr><td>NO2000</td><td>2026年10月8日</td><td>客户24</td><td>杭州仓</td><td>笔记本内存条</td><td>1</td><td>199</td><td>抖音</td></tr><tr><td>NO2001</td><td>2026年10月15日</td><td>客户39</td><td>杭州</td><td>降噪耳机</td><td>3 </td><td>299</td><td>京东</td></tr><tr><td>NO2002</td><td>2026年10月20日</td><td>客户52</td><td>深圳</td><td>显示器支架</td><td>2</td><td>￥1,299</td><td>私域</td></tr><tr><td>NO2003</td><td>2026年10月23日</td><td>客户56</td><td>杭州</td><td>显示器支架</td><td>3</td><td>199</td><td>私域</td></tr><tr><td>NO2004</td><td>2026年10月17日</td><td>客户58</td><td>深圳</td><td>无线鼠标</td><td>5</td><td>￥1,299</td><td>京东</td></tr></tbody></table></div></div>
+<div><div class="card ok"><div class="ttl">处理后：统一明细（有效数据行已去重）</div><table><thead><tr><th>订单号</th><th>日期</th><th>客户</th><th>城市</th><th>商品</th><th>数量</th><th>单价</th><th>金额</th></tr></thead><tbody><tr><td>NO1029</td><td>2026-10-04</td><td>客户26</td><td>杭州</td><td>机械键盘</td><td>2</td><td>199</td><td>398</td></tr><tr><td>NO1039</td><td>2026-10-04</td><td>客户56</td><td>广州</td><td>显示器支架</td><td>3</td><td>89.9</td><td>269.7</td></tr><tr><td>NO1023</td><td>2026-10-05</td><td>客户06</td><td>杭州</td><td>USB-C 扩展坞</td><td>2</td><td>199</td><td>398</td></tr><tr><td>NO1033</td><td>2026-10-05</td><td>客户09</td><td>上海</td><td>机械键盘</td><td>2</td><td>459</td><td>918</td></tr><tr><td>NO1025</td><td>2026-10-06</td><td>客户17</td><td>深圳</td><td>无线鼠标</td><td>2</td><td>299</td><td>598</td></tr><tr><td>NO1034</td><td>2026-10-06</td><td>客户59</td><td>上海</td><td>笔记本内存条</td><td>1</td><td>459</td><td>459</td></tr><tr><td>NO1027</td><td>2026-10-07</td><td>客户25</td><td>上海</td><td>USB-C 扩展坞</td><td>1</td><td>459</td><td>459</td></tr><tr><td>NO2022</td><td>2026-10-07</td><td>客户41</td><td>杭州</td><td>显示器支架</td><td>3</td><td>89.9</td><td>269.7</td></tr></tbody></table></div></div>
+</div>
+<div class="foot">
+<span>清洗规则：空白/合计行剔除 · 全字段去重 · 日期 4 种格式归一 · 金额去 ￥与千分位 · 城市别名归并（SH→上海）</span>
+<span><b>自动产出</b>：明细表 / 汇总表 / 异常行表</span>
+</div></div>
