@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Excel 批量清洗 / 多表合并 / 报表自动化 · 明码标价 先看结果再付款</title>
+<meta name="description" content="Excel 脏数据清洗、多表合并汇总核对、每月报表自动化。价格公开，先用你的样例跑一遍给你看结果，你验收后再付款。附免费开源脚本。">
+<style>
+:root{--ink:#12151a;--mut:#5b6470;--line:#e3e7ee;--bg:#fbfcfd;--acc:#1668dc}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.7 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding:40px 20px 80px}
+h1{font-size:28px;line-height:1.35;margin:0 0 10px}
+h2{font-size:19px;margin:38px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
+.lead{color:var(--mut);margin:0 0 6px}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mut);font-weight:600;font-size:13px;letter-spacing:.04em}
+td.p{white-space:nowrap;font-weight:600}
+ol,ul{padding-left:22px}li{margin:6px 0}
+.box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.note{color:var(--mut);font-size:14px}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.btn{display:inline-block;background:var(--acc);color:#fff;padding:11px 20px;border-radius:8px;font-weight:600;margin:8px 0}
+.btn:hover{text-decoration:none;opacity:.92}
+code{background:#eef1f6;padding:2px 6px;border-radius:4px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Excel 批量清洗 · 多表合并 · 报表自动化</h1>
+<p class="lead">明码标价。先用你的样例跑一遍，把结果发给你看，<b>你验收满意再付款</b>。</p>
+
+<h2>价格</h2>
+<table>
+<tr><th>需求</th><th>价格</th><th>典型场景</th></tr>
+<tr><td>单表清洗</td><td class="p">60 元起</td><td>去重、合并单元格拆开、日期/金额格式统一、表头不在首行</td></tr>
+<tr><td>多表合并 + 汇总核对</td><td class="p">150 元起</td><td>几十个表合成一张，按维度汇总，且保证「明细合计 = 汇总合计」</td></tr>
+<tr><td>CSV / 分号分隔 / 编码错乱</td><td class="p">80 元起</td><td>无表头、UTF-8 BOM、后缀写错导致打不开</td></tr>
+<tr><td>每月固定报表自动化</td><td class="p">400 元/月</td><td>给一套脚本，以后你双击就跑，或每月跑一次我来跑</td></tr>
+</table>
+<p class="note">为什么能做到这个价：同一套流水线复用于所有单子，边际成本低。价格低不代表草率——下面有交付口径。</p>
+
+<h2>交付流程（4 步）</h2>
+<ol>
+<li>在 <a href="https://github.com/DaoYewochengla/excel-auto-clean/issues/new">GitHub Issue</a> 里写清需求，附 1–2 个脱敏样例文件。</li>
+<li>我先用你的样例跑一遍，把清洗后的结果直接发回给你看。</li>
+<li>你看结果满意 → 付款（收款码私下发你）→ 我交付完整结果 + 可复用脚本。</li>
+<li>不满意不收钱，样例结果白送你看。</li>
+</ol>
+<div class="box">
+<b>硬口径</b>：任何交付都满足「明细金额合计 == 汇总合计行」，对不上我不交付，先查清差异（这一条是踩过坑加上的）。
+</div>
+
+<h2>边界（不接的活）</h2>
+<ul>
+<li>不做需要登录才能取数的爬取，不做付费墙数据。</li>
+<li>不做伪造/美化数据的活。</li>
+<li>你的文件不留存：交付完成后 7 天内删除。</li>
+</ul>
+
+<h2>免费自取</h2>
+<p>清洗脚本开源，能自己跑的自己跑，不用给钱：<a href="https://github.com/DaoYewochengla/excel-auto-clean">DaoYewochengla/excel-auto-clean</a>（<code>excel_batch/deliver.py</code>，支持多 sheet、合并单元格、分号 CSV、后缀错写、脏单价、合计行）。</p>
+<p class="note">用不下去、或者数据太脏，再来下单。</p>
+
+<h2>下单</h2>
+<p><a class="btn" href="https://github.com/DaoYewochengla/excel-auto-clean/issues/new">开一个 Issue 说需求</a></p>
+<p class="note">Issue 里贴样例文件请先删掉真实姓名、手机号、身份证号等敏感字段——我不需要它们。</p>
+
+</div>
+</body>
+</html>
